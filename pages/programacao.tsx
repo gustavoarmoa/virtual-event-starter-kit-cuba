@@ -17,39 +17,40 @@
 import { GetStaticProps } from 'next';
 
 import Page from '@components/page';
-import SpeakersGrid from '@components/speakers-grid';
+import Schedule from '@components/schedule';
 import Layout from '@components/layout';
 import Header from '@components/header';
 
-import { getAllSpeakers } from '@lib/cms-api';
-import { Speaker } from '@lib/types';
+import { getAllStages } from '@lib/cms-api';
+import { Stage } from '@lib/types';
 import { META_DESCRIPTION } from '@lib/constants';
 
 type Props = {
-  speakers: Speaker[];
+  allStages: Stage[];
 };
 
-export default function Speakers({ speakers }: Props) {
+export default function SchedulePage({ allStages }: Props) {
   const meta = {
-    title: 'Speakers - Virtual Event Starter Kit',
+    title: 'Programação - Kit para iniciantes de evento virtual',
     description: META_DESCRIPTION
   };
+
   return (
     <Page meta={meta}>
       <Layout>
-        <Header hero="Speakers" description={meta.description} />
-        <SpeakersGrid speakers={speakers} />
+        <Header hero="Schedule" description={meta.description} />
+        <Schedule allStages={allStages} />
       </Layout>
     </Page>
   );
 }
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  const speakers = await getAllSpeakers();
+  const allStages = await getAllStages();
 
   return {
     props: {
-      speakers
+      allStages
     },
     revalidate: 60
   };

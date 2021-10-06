@@ -43,7 +43,7 @@ export default function TalkCard({ talk: { title, speaker, start, end }, showTim
     setStartAndEndTime(`${formatDate(start)} – ${formatDate(end)}`);
   }, []);
 
-  const firstSpeakerLink = `/speakers/${speaker[0].slug}`;
+  const firstSpeakerLink = `/palestrantes/${speaker[0].slug}`;
 
   return (
     <div key={title} className={styles.talk}>
@@ -75,7 +75,7 @@ export default function TalkCard({ talk: { title, speaker, start, end }, showTim
                 ))}
               </div>
               <h5 className={styles.name}>
-                {speaker.length === 1 ? speaker[0].name : `${speaker.length} speakers`}
+                {speaker.length === 1 ? speaker[0].name : `${speaker.length} palestrantes`}
               </h5>
             </div>
           </div>

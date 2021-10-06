@@ -43,7 +43,7 @@ export default function SponsorSection({ sponsor }: Props) {
           >
             <path d="M15 18l-6-6 6-6" />
           </svg>
-          Back to expo
+          Voltar a expo
         </a>
       </Link>
       <div className={styles.layout}>
@@ -88,11 +88,11 @@ export default function SponsorSection({ sponsor }: Props) {
               type="button"
               className={cn(styles.button, styles['button-link'])}
             >
-              Chat on Discord
+              Chat no Discord
             </a>
           </div>
           <div className={styles.resources}>
-            <h2 className={styles.heading}>Resources</h2>
+            <h2 className={styles.heading}>Recursos</h2>
             {sponsor.links.map(link => (
               <a
                 key={link.url}

@@ -31,14 +31,14 @@ type Props = {
 
 export default function Jobs({ jobs }: Props) {
   const meta = {
-    title: 'Career Fair - Virtual Event Starter Kit',
+    title: 'Feira de Emprego - Virtual Event Starter Kit',
     description: META_DESCRIPTION
   };
 
   return (
     <Page meta={meta}>
       <Layout>
-        <Header hero="Career Fair" description={meta.description} />
+        <Header hero="Feira de Empregos" description={meta.description} />
         <JobsGrid jobs={jobs} />
       </Layout>
     </Page>
